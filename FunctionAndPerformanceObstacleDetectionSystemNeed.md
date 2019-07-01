@@ -72,4 +72,8 @@ $g$ is gravitational acceleration.
 * [交通事故における車速と停止距離を考える](http://www5d.biglobe.ne.jp/Jusl/Keisanki/JTSL/TeisiSyasoku.html)  
 
 ### How to decide reaction performance
-Braking force of sudden brake by human is 70% of gravitational acceleration. 9.8m/s is expressed as $1g$. When the velocity is at 36km/h(10m/s), braking distance is 7.3m.  
+Braking force of sudden brake by human is 70% of gravitational acceleration. 9.8m/s is expressed as $1g$. When the velocity is at 36km/h(10m/s), braking distance is 7.3m as the following calculation.  
+* 7.3[m] = (Initial velocity[m/s])^2 / (2×0.7×$g$)
+
+This mean that the car will collide with the pedestrian if he ran out into the road before 7.3m. And then, if the pedestrian passed through the road while the car moved, they would not collide each other.  
+For example, when a width of car is 1.7m and a width of pedestrian is 0.5m, it takes for 2.2 second to pass through the road. So, if he ran out into the road longer than 22m, he would not be collided by the car.  
