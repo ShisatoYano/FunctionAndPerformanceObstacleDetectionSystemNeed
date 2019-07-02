@@ -13,6 +13,9 @@
         - [Braking distance](#braking-distance)
         - [Reference about brake](#reference-about-brake)
     - [How to decide reaction performance](#how-to-decide-reaction-performance)
+        - [Distance for halving collision accident](#distance-for-halving-collision-accident)
+    - [Calculating relative velocity](#calculating-relative-velocity)
+    - [Predicting obstacle behavior](#predicting-obstacle-behavior)
 
 <!-- /TOC -->
 
@@ -77,3 +80,21 @@ Braking force of sudden brake by human is 70% of gravitational acceleration. 9.8
 
 This mean that the car will collide with the pedestrian if he ran out into the road before 7.3m. And then, if the pedestrian passed through the road while the car moved, they would not collide each other.  
 For example, when a width of car is 1.7m and a width of pedestrian is 0.5m, it takes for 2.2 second to pass through the road. So, if he ran out into the road longer than 22m, he would not be collided by the car.  
+
+#### Distance for halving collision accident
+When the pedestrian ran into the road at 11m by half of 22m, if the car could stop by sudden braking, a collision accident would be reduced by half. The car needs 7.3m to stop by sudden braking. It has to detect the pedestrian and judge a possibility of collision during the rest of distance, 3.7m.  
+
+### Calculating relative velocity
+The velocity of car is 10m/s and it takes 0.37 sec to move until 3.7m. The detection process need to be executed during 0.37 sec. In this situation, a relative velocity is used for judging the possibility of collision. The relative velocity can be calculated as follow figure.  
+
+![](2019-07-02-22-27-51.png)  
+
+The system can get an accurate relative velocity data by using more than 2 sequential range data.  
+
+### Predicting obstacle behavior
+Not only position but also vector of relative behavior should be predicted to escape collision. The following 2 figures are how to predict by manual driving car and by autonomous driving car.
+![](2019-07-02-22-49-55.png)  
+
+![](2019-07-02-23-21-37.png)  
+
+![](2019-07-02-23-22-17.png)  
