@@ -16,6 +16,7 @@
         - [Distance for halving collision accident](#distance-for-halving-collision-accident)
     - [Calculating relative velocity](#calculating-relative-velocity)
     - [Predicting obstacle behavior](#predicting-obstacle-behavior)
+    - [Judging the object is obstacle or not](#judging-the-object-is-obstacle-or-not)
 
 <!-- /TOC -->
 
@@ -89,12 +90,15 @@ The velocity of car is 10m/s and it takes 0.37 sec to move until 3.7m. The detec
 
 ![](2019-07-02-22-27-51.png)  
 
-The system can get an accurate relative velocity data by using more than 2 sequential range data.  
-
-### Predicting obstacle behavior
-Not only position but also vector of relative behavior should be predicted to escape collision. The following 2 figures are how to predict by manual driving car and by autonomous driving car.
-![](2019-07-02-22-49-55.png)  
-
+The system can get an accurate relative velocity data by using more than 2 sequential range data. If 10 frames data was observed during short time, the calculated relative velocity would be very accurate like the following figure.  
 ![](2019-07-02-23-21-37.png)  
 
+### Predicting obstacle behavior
+Not only position but also vector of relative behavior should be predicted to escape collision. The following 2 figures are how to predict by manual driving car and by autonomous driving car.  
+The following left side figure is how to predict by manual driving car. When a human driver drives in escaping collision, he predicts other object's behavior.  
+On the other hand, the right side figure is how to predict by autonomous driving car. The car need to calculate a relative velocity vector between itself and the other object. The system can predict the other object's behavior by assuming that the velocity vector doesn't change during short time.  
+![](2019-07-02-22-49-55.png)  
+
+### Judging the object is obstacle or not
+The system can judge the other object is obstacle or not with the relative velocity vector. And then, TTC(Time to collision) can be calculated by dividing the range to the other object by the absolute relative velocity vector.  
 ![](2019-07-02-23-22-17.png)  
