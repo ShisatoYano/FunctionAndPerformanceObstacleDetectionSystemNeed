@@ -77,7 +77,7 @@ $g$ is gravitational acceleration.
 
 ### How to decide reaction performance
 Braking force of sudden brake by human is 70% of gravitational acceleration. 9.8m/s is expressed as $1g$. When the velocity is at 36km/h(10m/s), braking distance is 7.3m as the following calculation.  
-* 7.3[m] = (Initial velocity[m/s])^2 / (2×0.7×$g$)
+7.3[m] = (Initial velocity[m/s])^2 / (2×0.7×$g$)
 
 This mean that the car will collide with the pedestrian if he ran out into the road before 7.3m. And then, if the pedestrian passed through the road while the car moved, they would not collide each other.  
 For example, when a width of car is 1.7m and a width of pedestrian is 0.5m, it takes for 2.2 second to pass through the road. So, if he ran out into the road longer than 22m, he would not be collided by the car.  
@@ -102,3 +102,11 @@ On the other hand, the right side figure is how to predict by autonomous driving
 ### Judging the object is obstacle or not
 The system can judge the other object is obstacle or not with the relative velocity vector. And then, TTC(Time to collision) can be calculated by dividing the range to the other object by the absolute relative velocity vector.  
 ![](2019-07-02-23-22-17.png)  
+When a relative angle of the other object: $tan^{-1}(x/y)$ and a relative angle: $tan^{-1}(V_x / V_y)$ are same, the host vehicle collides with the other obejct. In fact, they have a width of their body. Even if it was not head-on collision, they would collide each other when they overlapped.  
+On the other hand, when the following condition was satisfied, they will not collide each other.  
+$$
+    tan^{-1}(\frac{V_x}{V_y}) > tan^{-1}(\frac{x_l-\frac{W}{2}}{y_l})
+$$  
+$$
+    tan^{-1}(\frac{V_x}{V_y}) < tan^{-1}(\frac{x_r-\frac{W}{2}}{y_r})
+$$
